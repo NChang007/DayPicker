@@ -1,26 +1,294 @@
-import React from "react";
+import React, { useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+  function openDayPicker(e) {
+    e.preventDefault();
+    document.querySelector("#dayPicker").classList.toggle("show");
+  }
+  // let selectedDays = []
+  const [selectedDays, setSelectedDays] = useState([])
+  const [startT, setStartT] = useState('08:00')
+  const [endT, setEndT] = useState('17:00')
+  // console.log(startT);
+  console.log(selectedDays);
+  function handleSelectDay(day) {
+    if(day =='sun'){
+      let newDay = true
+      if(selectedDays[0]){
+        for(let i=0;i<selectedDays.length;i++){
+          let dayN = selectedDays[i].name
+          if(dayN == 'Sunday'){ newDay = false }
+        }
+        if(newDay == false){
+          let filtered = selectedDays.filter((el) => el.name !== 'Sunday')
+          setSelectedDays(filtered)
+        }else {
+          let item = {
+            name: "Sunday",
+            startTime: '08:00',
+            endTime: '17:00'
+          }
+          setSelectedDays([...selectedDays, item])
+          console.log(selectedDays);
+        }
+      }else {
+        let item = {
+          name: "Sunday",
+          startTime: '08:00',
+          endTime: '17:00'
+        }
+        setSelectedDays([...selectedDays, item])
+      }
+    }else if(day =='mon'){
+      let newDay = true
+      if(selectedDays[0]){
+        for(let i=0;i<selectedDays.length;i++){
+          let dayN = selectedDays[i].name
+          if(dayN == 'Monday'){ newDay = false }
+        }
+        if(newDay == false){
+          let filtered = selectedDays.filter((el) => el.name !== 'Monday')
+          setSelectedDays(filtered)
+        }else {
+          let item = {
+            name: "Monday",
+            startTime: '08:00',
+            endTime: '17:00'
+          }
+          setSelectedDays([...selectedDays, item])
+          console.log(selectedDays);
+        }
+      }else {
+        let item = {
+          name: "Monday",
+          startTime: '08:00',
+          endTime: '17:00'
+        }
+        setSelectedDays([...selectedDays, item])
+      }
+    }else if(day =='tue'){
+      let newDay = true
+      if(selectedDays[0]){
+        for(let i=0;i<selectedDays.length;i++){
+          let dayN = selectedDays[i].name
+          if(dayN == 'Tuesday'){ newDay = false }
+        }
+        if(newDay == false){
+          let filtered = selectedDays.filter((el) => el.name !== 'Tuesday')
+          setSelectedDays(filtered)
+        }else {
+          let item = {
+            name: "Tuesday",
+            startTime: '08:00',
+            endTime: '17:00'
+          }
+          setSelectedDays([...selectedDays, item])
+          console.log(selectedDays);
+        }
+      }else {
+        let item = {
+          name: "Tuesday",
+          startTime: '08:00',
+          endTime: '17:00'
+        }
+        setSelectedDays([...selectedDays, item])
+      }
+    }else if(day =='wed'){
+      let newDay = true
+      if(selectedDays[0]){
+        for(let i=0;i<selectedDays.length;i++){
+          let dayN = selectedDays[i].name
+          if(dayN == 'Wednesday'){ newDay = false }
+        }
+        if(newDay == false){
+          let filtered = selectedDays.filter((el) => el.name !== 'Wednesday')
+          setSelectedDays(filtered)
+        }else {
+          let item = {
+            name: "Wednesday",
+            startTime: '08:00',
+            endTime: '17:00'
+          }
+          setSelectedDays([...selectedDays, item])
+          console.log(selectedDays);
+        }
+      }else {
+        let item = {
+          name: "Wednesday",
+          startTime: '08:00',
+          endTime: '17:00'
+        }
+        setSelectedDays([...selectedDays, item])
+      }
+    }else if(day =='thu'){
+      let newDay = true
+      if(selectedDays[0]){
+        for(let i=0;i<selectedDays.length;i++){
+          let dayN = selectedDays[i].name
+          if(dayN == 'Thursday'){ newDay = false }
+        }
+        if(newDay == false){
+          let filtered = selectedDays.filter((el) => el.name !== 'Thursday')
+          setSelectedDays(filtered)
+        }else {
+          let item = {
+            name: "Thursday",
+            startTime: '08:00',
+            endTime: '17:00'
+          }
+          setSelectedDays([...selectedDays, item])
+          console.log(selectedDays);
+        }
+      }else {
+        let item = {
+          name: "Thursday",
+          startTime: '08:00',
+          endTime: '17:00'
+        }
+        setSelectedDays([...selectedDays, item])
+      }
+    }else if(day =='fri'){
+      let newDay = true
+      if(selectedDays[0]){
+        for(let i=0;i<selectedDays.length;i++){
+          let dayN = selectedDays[i].name
+          if(dayN == 'Friday'){ newDay = false }
+        }
+        if(newDay == false){
+          let filtered = selectedDays.filter((el) => el.name !== 'Friday')
+          setSelectedDays(filtered)
+        }else {
+          let item = {
+            name: "Friday",
+            startTime: '08:00',
+            endTime: '17:00'
+          }
+          setSelectedDays([...selectedDays, item])
+          console.log(selectedDays);
+        }
+      }else {
+        let item = {
+          name: "Friday",
+          startTime: '08:00',
+          endTime: '17:00'
+        }
+        setSelectedDays([...selectedDays, item])
+      }
+    }else if(day =='sat'){
+      let newDay = true
+      if(selectedDays[0]){
+        for(let i=0;i<selectedDays.length;i++){
+          let dayN = selectedDays[i].name
+          if(dayN == 'Saturday'){ newDay = false }
+        }
+        if(newDay == false){
+          let filtered = selectedDays.filter((el) => el.name !== 'Saturday')
+          setSelectedDays(filtered)
+        }else {
+          let item = {
+            name: "Saturday",
+            startTime: '08:00',
+            endTime: '17:00'
+          }
+          setSelectedDays([...selectedDays, item])
+          console.log(selectedDays);
+        }
+      }else {
+        let item = {
+          name: "Saturday",
+          startTime: '08:00',
+          endTime: '17:00'
+        }
+        setSelectedDays([...selectedDays, item])
+      }
+    }
+  }
+
+  function handleOpenDay(e, item){
+    e.preventDefault()
+    selectedDays.forEach((i) => {
+      let mySpan = document.querySelector(`#${i.name}`)
+      mySpan.classList.remove('selectedDaySpan')
+    })
+    let myNewSpan = document.querySelector(`#${item.name}`)
+    myNewSpan.classList.add('selectedDaySpan')
+    let start = document.querySelector('#startTimeInput')
+    let end = document.querySelector('#endTimeInput')
+    start.value = item.startTime
+    end.value = item.endTime
+  }
+  function updateTime(e){
+    e.preventDefault()
+    let start = document.querySelector('#startTimeInput')
+    let end = document.querySelector('#endTimeInput')
+    let item = document.querySelector('.selectedDaySpan')
+    let selectedItem = null
+    selectedDays.forEach((i)=> {
+      if (i.name == item.id){
+        selectedItem = i
+      }
+    })
+    selectedItem.startTime = start.value
+    selectedItem.endTime = end.value
+    setSelectedDays(selectedDays)
+    
+  }
+
+  return (
+    <div className="testDayPickerCont">
+
+      <button onClick={(e) => openDayPicker(e)} className="dropbtn">
+        Select Availability
+      </button>
+      <div id="dayPicker" className="odp-content">
+        <div className="d-flex">
+          <div className="odp-content-cont">
+            <span onClick={()=> handleSelectDay('sun')} className="odp_day">Sun</span>
+            <span onClick={()=> handleSelectDay('mon')} className="odp_day">Mon</span>
+            <span onClick={()=> handleSelectDay('tue')} className="odp_day">Tue</span>
+            <span onClick={()=> handleSelectDay('wed')} className="odp_day">Wed</span>
+            <span onClick={()=> handleSelectDay('thu')} className="odp_day">Thu</span>
+            <span onClick={()=> handleSelectDay('fri')} className="odp_day">Fri</span>
+            <span onClick={()=> handleSelectDay('sat')} className="odp_day">Sat</span>
+          </div>
+          <div className="divider"></div>
+          <div className="odp-selected-cont">
+            <span className="titleSpan">Selected</span>
+            <div style={{display: 'flex',flexDirection: 'column', alignItems:'center'}}>
+              {selectedDays.map((item, idx) => {
+                return (
+                  <span 
+                    id={item.name}
+                    className='daySpan' 
+                    key={idx}
+                    onClick={(e)=> handleOpenDay(e, item, idx)}
+                  >{item.name}</span>
+                )
+              })}
+            </div>
+          </div>
+          <div className="divider"></div>
+          <div className="odp-time-cont">
+            <span className="titleSpan">Set Time</span>
+            <div className='setTimeInputs'>
+              <div style={{display:'flex'}}>
+                <span>Open :{' '}</span>
+                <input id="startTimeInput" type="time" value={startT} onChange={(e)=> setStartT(e.target.value)} />
+              </div>
+              <div style={{display:'flex'}}>
+                <span>Close :</span>
+                <input id="endTimeInput" type="time"  value={endT} onChange={(e)=> setEndT(e.target.value)} />
+              </div>
+            </div>
+            <button className="updateTimeBTN" onClick={(e)=> updateTime(e)}>
+              Update Time
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  );
 };
 
 export default Home;
